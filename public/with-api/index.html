@@ -11,7 +11,9 @@
 	<link rel="stylesheet" href="../style.css">
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
-<body x-data="TaxiQueue" >
+<body x-data="TaxiQueue" 
+	passenger=0
+	taxi=0>
 	<h1>Taxi queue app - with API</h1>
 
 	<div>
@@ -37,7 +39,7 @@
 			<img src="../images/minivan.png" alt="" width="100">
 			<img src="../images/minivan.png" alt="" width="100">
 			<span class="taxi_queue_count count" >0</span>
-			<button class="join_taxi_queue">Join queue</button>
+			<button x-on: click class="join_taxi_queue">Join queue</button>
 		</div>
 	
 		<div class="section" >
@@ -47,7 +49,7 @@
 			<img src="../images/arrow.png" alt="" width="100">
 			<img src="../images/minivan.png" alt="" width="100">
 			<!-- <span class="taxi_queue_count count" >0</span> -->
-			<button class="depart">Depart</button>
+			<button x-on:click class="depart">Depart</button>
 		</div>
 	
 
