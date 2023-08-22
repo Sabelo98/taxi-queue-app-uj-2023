@@ -10,31 +10,33 @@ document.addEventListener('alpine:init', () => {
 
 			joinQueue() {
 				let count = 1;
-				return this.PassengerCount = this.PassengerCount + count;
+				 this.PassengerCount = this.PassengerCount + count;
 			},
 
 			leaveQueue() {
 				if (this.PassengerCount > 0) {
 					let count = 1;
-					return this.PassengerCount = this.PassengeCount - count;
+					 this.PassengerCount = this.PassengeCount - count;
 				}
 				else {
-					return;
+					alert(
+						"no passengers"
+					);
 				}
 
 			},
 
 			joinTaxiQueue() {
 				let count = 1;
-				return this.TaxiCount = this.TaxiCount + count;
+				 this.TaxiCount = this.TaxiCount + count;
 			},
 
 			queueLength() {
-				return this.PassengerCount.length
+				 this.PassengerCount.length
 			},
 
 			taxiQueueLength() {
-				return this.TaxiCount.length
+				 this.TaxiCount.length
 			},
 
 			taxiDepart() {
