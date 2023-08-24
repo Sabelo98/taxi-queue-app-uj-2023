@@ -4,44 +4,37 @@ document.addEventListener('alpine:init', () => {
 
 		return {
 			version: 'no-api-1.0',
-			TaxiCount: 0,
-			PassengerCount: 0,
-
+			queueLength: 0,
+			taxiCount: 0,
+			passengerCount: 0,
 
 			joinQueue() {
-				let count = 1;
-				return this.PassengerCount = this.PassengerCount + count;
+				this.passengerCount++
+				console.log('joining queue')
 			},
 
 			leaveQueue() {
-				if (this.PassengerCount > 0) {
-					let count = 1;
-					return this.PassengerCount = this.PassengeCount - count;
-				}
-				else {
-					return;
-				}
-
+				this.passengerCount--;
 			},
 
 			joinTaxiQueue() {
-				let count = 1;
-				return this.TaxiCount = this.TaxiCount + count;
+
+				this.taxiCount++;
 			},
 
 			queueLength() {
-				return this.PassengerCount.length
+				return this.queueLength;
 			},
 
 			taxiQueueLength() {
-				return this.TaxiCount.length
-			},
-
+				return this.taxiCount;
+			}
+			,
 			taxiDepart() {
-				if (this.PasengerCount >= 12 && this.TaxiCount >= 1) {
-					let count = 1
-					this.PassengerCount = this.PassengerCount - 12;
-					this.TaxiCount = this.TaxiCount - count
+
+				if (this.taxiCount > 0 && this.passengerCount >= 12) {
+                    this.taxiCount--;
+                    this.passengerCount -= 12;
 
 				}
 			}
@@ -50,5 +43,3 @@ document.addEventListener('alpine:init', () => {
 	});
 
 });
-
-
